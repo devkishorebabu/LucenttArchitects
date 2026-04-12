@@ -1,0 +1,66 @@
+/* ============================================
+   SERVICES
+   ============================================ */
+.services { padding: 80px 24px; background: var(--c-off); }
+.services__tag {
+  display: block; text-align: center;
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--c-gold); margin-bottom: 10px;
+}
+.services__heading {
+  text-align: center;
+  font-family: var(--ff-head);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 600; line-height: 1.2;
+  margin-bottom: 36px;
+}
+.services__heading-accent { color: var(--c-gold-d); font-style: italic; }
+.services__grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  max-width: var(--mw); margin: 0 auto;
+}
+.svc {
+  position: relative; background: var(--c-white);
+  padding: 24px 22px; border-radius: 10px;
+  border: 1px solid transparent;
+  overflow: hidden; cursor: default;
+  opacity: 0; transform: translateY(40px);
+  transition: opacity .6s var(--ease-out) calc(var(--i) * .08s),
+              transform .6s var(--ease-out) calc(var(--i) * .08s),
+              box-shadow .3s, border-color .3s;
+}
+.svc:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 24px 64px rgba(0,0,0,.08);
+  border-color: rgba(201,168,76,.2);
+}
+.svc__icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: linear-gradient(135deg, rgba(201,168,76,.12), rgba(201,168,76,.04));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--c-gold); margin-bottom: 14px;
+  transition: all .35s var(--ease);
+}
+.svc:hover .svc__icon {
+  background: var(--c-gold); color: var(--c-white);
+  transform: scale(1.08);
+}
+.svc__title {
+  font-family: var(--ff-head);
+  font-size: 1rem; font-weight: 600; margin-bottom: 6px;
+}
+.svc__desc { font-size: .84rem; color: var(--c-muted); line-height: 1.6; }
+.svc__num {
+  position: absolute; top: 12px; right: 16px;
+  font-family: var(--ff-head); font-size: 2rem;
+  font-weight: 700; color: rgba(0,0,0,.025); line-height: 1;
+}
+
+@media (max-width: 1024px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .services { padding: 60px 24px; }
+  .services__grid { grid-template-columns: 1fr; }
+}

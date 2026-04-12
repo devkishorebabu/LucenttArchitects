@@ -1,0 +1,109 @@
+/* ============================================
+   LUCENTT ARCHITECTS — Base / Reset / Tokens
+   ============================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --c-dark: #0c0c14;
+  --c-dark2: #141420;
+  --c-gold: #c9a84c;
+  --c-gold-l: #ddc06e;
+  --c-gold-d: #a88b38;
+  --c-white: #ffffff;
+  --c-off: #f6f5f0;
+  --c-gray1: #e6e4df;
+  --c-gray4: #888580;
+  --c-gray6: #555350;
+  --c-text: #1c1c1c;
+  --c-muted: #6b6864;
+  --ff-head: 'Playfair Display', Georgia, serif;
+  --ff-body: 'Inter', -apple-system, sans-serif;
+  --ease: cubic-bezier(.4, 0, .2, 1);
+  --ease-out: cubic-bezier(0, 0, .2, 1);
+  --mw: 1200px;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--ff-body);
+  color: var(--c-text);
+  background: var(--c-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; object-fit: cover; }
+
+.container { max-width: var(--mw); margin: 0 auto; padding: 0 24px; }
+
+/* --- Tags --- */
+.tag {
+  display: inline-block;
+  font-size: .72rem; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--c-gold); margin-bottom: 14px;
+  padding-left: 36px; position: relative;
+}
+.tag::before {
+  content: ''; position: absolute; left: 0; top: 50%;
+  width: 24px; height: 1.5px; background: var(--c-gold);
+}
+.tag--center { padding-left: 0; text-align: center; display: block; }
+.tag--center::before { display: none; }
+.tag--light { color: var(--c-gold-l); }
+.tag--light::before { background: var(--c-gold-l); }
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--ff-body); font-size: .88rem; font-weight: 500;
+  padding: 13px 30px; border-radius: 6px; border: none;
+  cursor: pointer; transition: all .35s var(--ease);
+  letter-spacing: .3px; position: relative; overflow: hidden;
+}
+.btn--lg { padding: 16px 38px; font-size: .92rem; }
+.btn--glow {
+  background: var(--c-gold); color: var(--c-white);
+  box-shadow: 0 0 0 0 rgba(201,168,76,0);
+}
+.btn--glow:hover {
+  background: var(--c-gold-d);
+  box-shadow: 0 8px 32px rgba(201,168,76,.35);
+  transform: translateY(-2px);
+}
+.btn__arrow {
+  display: inline-block;
+  transition: transform .3s var(--ease);
+}
+.btn--glow:hover .btn__arrow { transform: translateX(4px); }
+.btn--glass {
+  background: rgba(255,255,255,.08); color: var(--c-white);
+  border: 1px solid rgba(255,255,255,.18);
+  backdrop-filter: blur(6px);
+}
+.btn--glass:hover {
+  background: rgba(255,255,255,.15);
+  border-color: rgba(255,255,255,.3);
+}
+
+/* --- Shared Animations --- */
+.anim-up {
+  opacity: 0; transform: translateY(40px);
+  animation: fadeUp .9s var(--ease-out) forwards;
+}
+.anim-d1 { animation-delay: .15s; }
+.anim-d2 { animation-delay: .3s; }
+.anim-d3 { animation-delay: .45s; }
+.anim-d4 { animation-delay: .6s; }
+.anim-d5 { animation-delay: .75s; }
+@keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+
+/* Scroll-triggered reveals */
+.in-view .about__images { opacity: 1; transform: translateX(0); }
+.in-view .about__text { opacity: 1; transform: translateX(0); }
+.in-view .svc { opacity: 1; transform: translateY(0); }
+.in-view .proj { opacity: 1; transform: scale(1); }
+.in-view .contact__info { opacity: 1; transform: translateX(0); }
+.in-view .contact__form { opacity: 1; transform: translateX(0); }
