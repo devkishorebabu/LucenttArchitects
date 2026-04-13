@@ -52,6 +52,8 @@
 .nav__backdrop { display: none; }
 
 @media (max-width: 768px) {
+  .nav__inner { width: 100%; }
+  .nav__logo { min-width: 0; overflow: hidden; }
   .nav__menu {
     position: fixed; top: 0; right: -100%;
     width: 280px; height: 100vh; height: 100dvh;
@@ -63,9 +65,9 @@
   .nav__menu--open { right: 0; }
   .nav__links { flex-direction: column; gap: 20px; align-items: center; }
   .nav__link { font-size: 1.05rem; }
-  .nav__cta { display: none; }
+  .nav__cta { display: none !important; }
   .nav__cta-mobile { display: inline-flex; margin-top: 16px; }
-  .nav__hamburger { display: block; }
+  .nav__hamburger { display: block; flex-shrink: 0; }
   .nav__backdrop {
     display: block; position: fixed; inset: 0;
     background: rgba(0,0,0,.5); z-index: 99;

@@ -6,7 +6,7 @@ import HeroShapes from './HeroShapes'
 import HeroStats from './HeroStats'
 
 const slides = [
-  { image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1920&q=85', alt: 'Stunning modern villa with pool at twilight' },
+  { image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=85', alt: 'Modern luxury home with elegant architectural design' },
   { image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1920&q=85', alt: 'Luxury contemporary home exterior' },
   { image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1920&q=85', alt: 'Premium architectural design at golden hour' },
 ]

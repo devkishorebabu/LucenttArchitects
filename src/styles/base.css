@@ -23,7 +23,7 @@
   --mw: 1200px;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: var(--ff-body);
   color: var(--c-text);
@@ -32,6 +32,7 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
+.app { overflow-x: clip; width: 100%; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 img { max-width: 100%; display: block; object-fit: cover; }
