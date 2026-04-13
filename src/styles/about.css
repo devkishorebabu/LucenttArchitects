@@ -11,6 +11,7 @@
   position: relative; height: 520px;
   opacity: 0; transform: translateX(-60px);
   transition: all .9s var(--ease-out);
+  overflow: hidden;
 }
 .about__img-main {
   position: absolute; top: 0; left: 0; width: 75%; height: 400px;

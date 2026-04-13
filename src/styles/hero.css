@@ -163,7 +163,7 @@
 }
 
 @media (max-width: 768px) {
-  .hero__content { padding: 140px 24px 140px; }
+  .hero__content { padding: 140px 24px 60px; }
   .hero__stats { gap: 24px; flex-wrap: wrap; }
   .hero__bottom { flex-direction: column; gap: 20px; align-items: flex-start; }
   .hero__scroll { display: none; }
